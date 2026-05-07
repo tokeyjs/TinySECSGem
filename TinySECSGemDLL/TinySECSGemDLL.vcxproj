@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{45fa4872-0cde-413e-a755-c37eb89473dd}</ProjectGuid>
+    <RootNamespace>TinySECSGemDLL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Lib\$(ProjectName)\x86\</OutDir>
+    <TargetName>$(ProjectName)_D</TargetName>
+    <PublicIncludeDirectories>
+    </PublicIncludeDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Lib\$(ProjectName)\x86\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Lib\$(ProjectName)\x64\</OutDir>
+    <TargetName>$(ProjectName)_D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Lib\$(ProjectName)\x64\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;SECSGEMDLL_EXPORTS;HPSOCKET_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)third_party\Include\HPSocket\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)third_party\Lib\HPSocket\x86\static\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>HPSocket_D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(SolutionDir)Include\$(ProjectName)" mkdir "$(SolutionDir)Include\$(ProjectName)"
+if not exist "$(SolutionDir)Lib" mkdir "$(SolutionDir)Lib"
+if not exist "$(SolutionDir)Bin" mkdir "$(SolutionDir)Bin"
+
+for %%f in ("$(ProjectDir)\*Item.h") do copy /Y "%%f" "$(SolutionDir)Include\$(ProjectName)\"
+copy /Y "$(ProjectDir)TinySECSGem.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)SecsGemLibrary.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)SecsMessage.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)Stream9Message.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(TargetDir)$(TargetName).dll" "$(SolutionDir)Bin\"
+
+echo Publish Success</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;SECSGEMDLL_EXPORTS;HPSOCKET_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)third_party\Include\HPSocket\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>HPSocket.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)third_party\Lib\HPSocket\x86\static\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(SolutionDir)Include\$(ProjectName)" mkdir "$(SolutionDir)Include\$(ProjectName)"
+if not exist "$(SolutionDir)Lib" mkdir "$(SolutionDir)Lib"
+if not exist "$(SolutionDir)Bin" mkdir "$(SolutionDir)Bin"
+
+for %%f in ("$(ProjectDir)\*Item.h") do copy /Y "%%f" "$(SolutionDir)Include\$(ProjectName)\"
+copy /Y "$(ProjectDir)TinySECSGem.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)SecsGemLibrary.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)SecsMessage.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)Stream9Message.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(TargetDir)$(TargetName).dll" "$(SolutionDir)Bin\"
+
+echo Publish Success</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;SECSGEMDLL_EXPORTS;HPSOCKET_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)third_party\Include\HPSocket\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)third_party\Lib\HPSocket\x64\static\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>HPSocket_D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(SolutionDir)Include\$(ProjectName)" mkdir "$(SolutionDir)Include\$(ProjectName)"
+if not exist "$(SolutionDir)Lib" mkdir "$(SolutionDir)Lib"
+if not exist "$(SolutionDir)Bin" mkdir "$(SolutionDir)Bin"
+
+for %%f in ("$(ProjectDir)\*Item.h") do copy /Y "%%f" "$(SolutionDir)Include\$(ProjectName)\"
+copy /Y "$(ProjectDir)TinySECSGem.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)SecsGemLibrary.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)SecsMessage.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)Stream9Message.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(TargetDir)$(TargetName).dll" "$(SolutionDir)Bin\"
+
+echo Publish Success</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;HPSOCKET_STATIC_LIB;SECSGEMDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)third_party\Include\HPSocket\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)third_party\Lib\HPSocket\x64\static\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>HPSocket.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist "$(SolutionDir)Include\$(ProjectName)" mkdir "$(SolutionDir)Include\$(ProjectName)"
+if not exist "$(SolutionDir)Lib" mkdir "$(SolutionDir)Lib"
+if not exist "$(SolutionDir)Bin" mkdir "$(SolutionDir)Bin"
+
+for %%f in ("$(ProjectDir)\*Item.h") do copy /Y "%%f" "$(SolutionDir)Include\$(ProjectName)\"
+copy /Y "$(ProjectDir)TinySECSGem.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)SecsGemLibrary.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)SecsMessage.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(ProjectDir)Stream9Message.h" "$(SolutionDir)Include\$(ProjectName)"
+copy /Y "$(TargetDir)$(TargetName).dll" "$(SolutionDir)Bin\"
+
+echo Publish Success</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ASCIIItem.h" />
+    <ClInclude Include="BaseItem.h" />
+    <ClInclude Include="BinaryItem.h" />
+    <ClInclude Include="BooleanItem.h" />
+    <ClInclude Include="Float4ByteItem.h" />
+    <ClInclude Include="Float8ByteItem.h" />
+    <ClInclude Include="HPSocketTransport.h" />
+    <ClInclude Include="Int1ByteItem.h" />
+    <ClInclude Include="Int2ByteItem.h" />
+    <ClInclude Include="Int4ByteItem.h" />
+    <ClInclude Include="Int8ByteItem.h" />
+    <ClInclude Include="Internal.h" />
+    <ClInclude Include="JIS8Item.h" />
+    <ClInclude Include="ListItem.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="TinySECSGem.h" />
+    <ClInclude Include="SecsGemLibrary.h" />
+    <ClInclude Include="SecsMessage.h" />
+    <ClInclude Include="Stream9Message.h" />
+    <ClInclude Include="TopItem.h" />
+    <ClInclude Include="UInt1ByteItem.h" />
+    <ClInclude Include="UInt2ByteItem.h" />
+    <ClInclude Include="UInt4ByteItem.h" />
+    <ClInclude Include="UInt8ByteItem.h" />
+    <ClInclude Include="UnicodeItem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ASCIIItem.cpp" />
+    <ClCompile Include="BaseItem.cpp" />
+    <ClCompile Include="BinaryItem.cpp" />
+    <ClCompile Include="BooleanItem.cpp" />
+    <ClCompile Include="Float4ByteItem.cpp" />
+    <ClCompile Include="Float8ByteItem.cpp" />
+    <ClCompile Include="HPSocketTransport.cpp" />
+    <ClCompile Include="Int1ByteItem.cpp" />
+    <ClCompile Include="Int2ByteItem.cpp" />
+    <ClCompile Include="Int4ByteItem.cpp" />
+    <ClCompile Include="Int8ByteItem.cpp" />
+    <ClCompile Include="JIS8Item.cpp" />
+    <ClCompile Include="ListItem.cpp" />
+    <ClCompile Include="SecsGemLibrary.cpp" />
+    <ClCompile Include="SecsMessage.cpp" />
+    <ClCompile Include="Stream9Message.cpp" />
+    <ClCompile Include="TopItem.cpp" />
+    <ClCompile Include="UInt1ByteItem.cpp" />
+    <ClCompile Include="UInt2ByteItem.cpp" />
+    <ClCompile Include="UInt4ByteItem.cpp" />
+    <ClCompile Include="UInt8ByteItem.cpp" />
+    <ClCompile Include="UnicodeItem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TinySECSGemDLL.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

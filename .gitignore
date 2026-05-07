@@ -1,0 +1,68 @@
+# Visual Studio user and workspace files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.ncb
+*.opendb
+*.cachefile
+ipch/
+
+
+# Root build output directories
+/Bin/
+/Lib/
+/obj/
+/out/
+
+# Visual Studio project intermediate directories
+/Debug/
+/Release/
+/x64/
+/x86/
+/Win32/
+/uDebug/
+/TinySECSGemDLL/Debug/
+/TinySECSGemDLL/Release/
+/TinySECSGemDLL/x64/
+/TinySECSGemDLL/x86/
+/TinySECSGemDLL/Win32/
+/TinySECSGemDLL/uDebug/
+/Test/Debug/
+/Test/Release/
+/Test/x64/
+/Test/x86/
+/Test/Win32/
+/Test/uDebug/
+
+# C/C++ build artifacts
+*.obj
+*.pch
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.dll
+*.exe
+*.iobj
+*.ipdb
+*.res
+*.aps
+
+# Build logs and MSBuild tracking files
+*.log
+*.tlog
+*.lastbuildstate
+*.recipe
+*.Build.CppClean.log
+*.FileListAbsolute.txt
+
+# Ignore generated/import libraries by default.
+# HP-Socket static libraries under third_party are intentionally kept.
+*.lib
+!third_party/Lib/HPSocket/**/*.lib
+/AGENTS.md
+/CLAUDE.md

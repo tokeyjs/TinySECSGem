@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\DataItem">
+      <UniqueIdentifier>{e8fe5240-2f39-4aa5-b1eb-105f027578dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataItem">
+      <UniqueIdentifier>{fc0a2622-3487-4ddc-b647-89b9847985b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Transport">
+      <UniqueIdentifier>{656dd6d0-0e6f-4153-a6a4-8c36a5dc0edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Transport">
+      <UniqueIdentifier>{766f4f51-03fb-441c-a8d8-599b90689f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SECSMessage">
+      <UniqueIdentifier>{ee27ef95-b517-4f81-9925-f7e3b525b184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\SECSMessage">
+      <UniqueIdentifier>{bdd2ca0d-737a-44b9-bd8b-d80f3a3dcc6f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ASCIIItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="BooleanItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Float4ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Float8ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Int1ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Int2ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Int4ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Int8ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="JIS8Item.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="ListItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="TopItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="UInt1ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="UInt2ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="UInt4ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="UInt8ByteItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="UnicodeItem.h">
+      <Filter>头文件\DataItem</Filter>
+    </ClInclude>
+    <ClInclude Include="TinySECSGem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SecsGemLibrary.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HPSocketTransport.h">
+      <Filter>头文件\Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="SecsMessage.h">
+      <Filter>头文件\SECSMessage</Filter>
+    </ClInclude>
+    <ClInclude Include="Stream9Message.h">
+      <Filter>头文件\SECSMessage</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ASCIIItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="BooleanItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Float4ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Float8ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Int1ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Int2ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Int4ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Int8ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="JIS8Item.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="ListItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="TopItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="UInt1ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="UInt2ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="UInt4ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="UInt8ByteItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="UnicodeItem.cpp">
+      <Filter>源文件\DataItem</Filter>
+    </ClCompile>
+    <ClCompile Include="SecsGemLibrary.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HPSocketTransport.cpp">
+      <Filter>源文件\Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="SecsMessage.cpp">
+      <Filter>源文件\SECSMessage</Filter>
+    </ClCompile>
+    <ClCompile Include="Stream9Message.cpp">
+      <Filter>源文件\SECSMessage</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TinySECSGemDLL.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
