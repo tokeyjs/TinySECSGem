@@ -52,7 +52,7 @@ TinySECSGem 适用于：
   - NotConnected
   - ConnectedNotSelected
   - Selected
-- T3、T5、T6、T7、T8、T1 定时器
+- T3、T5、T6、T7、T8定时器
 - 自动 Primary / Secondary 事务匹配
 - 可选自动 Select 和自动重连
 

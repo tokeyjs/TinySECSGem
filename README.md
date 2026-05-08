@@ -52,7 +52,7 @@ It is not yet a complete GEM implementation. Features such as GEM state/event mo
   - NotConnected
   - ConnectedNotSelected
   - Selected
-- Timers for T3, T5, T6, T7, T8, and T1
+- Timers for T3, T5, T6, T7, T8
 - Automatic Primary / Secondary transaction matching
 - Optional auto-select and auto-reconnect behavior
 
