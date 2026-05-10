@@ -20,7 +20,7 @@
 
 
 TinySECSGem::BaseItem::BaseItem()
-	: m_eItemType(EnumSECSItemType::ItemType_UNKNOW)
+	: m_eItemType(EnumSECSItemType::ItemType_UNKNOWN)
 {
 }
 

@@ -65,7 +65,7 @@ namespace TinySECSGem
         ItemType_UINT2 = 052,
         ItemType_UINT4 = 054,
         ItemType_TOP = 070,
-        ItemType_UNKNOW = 071,
+        ItemType_UNKNOWN = 071,
     };
 
     enum class EnumHSMSMode

@@ -260,6 +260,8 @@ void ListItem::clear()
 
 void ListItem::push_back(BaseItem* val)
 {
+    if (val == nullptr)
+        return;
     m_data.push_back(val);
 }
 

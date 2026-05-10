@@ -119,9 +119,12 @@ namespace TinySECSGem
             std::lock_guard<std::mutex> lock(m_connMutex);
             return m_client->Send(data, static_cast<int>(length)) == TRUE;
         }
-
-        std::lock_guard<std::mutex> lock(m_connMutex);
-        return m_connId != 0 && m_server->Send(m_connId, data, static_cast<int>(length)) == TRUE;
+        CONNID connId = 0;
+        {
+            std::lock_guard<std::mutex> lock(m_connMutex);
+            connId = m_connId;
+        }
+        return connId != 0 && m_server->Send(connId, data, static_cast<int>(length)) == TRUE;
     }
 
     bool HPSocketTransport::Disconnect()
@@ -131,8 +134,12 @@ namespace TinySECSGem
             return m_client->Stop() == TRUE;
         }
 
-        std::lock_guard<std::mutex> lock(m_connMutex);
-        return m_connId != 0 && m_server->Disconnect(m_connId) == TRUE;
+        CONNID connId = 0;
+        {
+            std::lock_guard<std::mutex> lock(m_connMutex);
+            connId = m_connId;
+        }
+        return connId != 0 && m_server->Disconnect(connId) == TRUE;
     }
 
     bool HPSocketTransport::Peek(uint8_t* data, size_t length)
@@ -147,8 +154,13 @@ namespace TinySECSGem
             return m_client->Peek(data, static_cast<int>(length)) == FR_OK;
         }
 
-        std::lock_guard<std::mutex> lock(m_connMutex);
-        return m_connId != 0 && m_server->Peek(m_connId, data, static_cast<int>(length)) == FR_OK;
+        CONNID connId = 0;
+        {
+            std::lock_guard<std::mutex> lock(m_connMutex);
+            connId = m_connId;
+        }
+
+        return connId != 0 && m_server->Peek(connId, data, static_cast<int>(length)) == FR_OK;
     }
 
     bool HPSocketTransport::Fetch(uint8_t* data, size_t length)
@@ -163,8 +175,13 @@ namespace TinySECSGem
             return m_client->Fetch(data, static_cast<int>(length)) == FR_OK;
         }
 
-        std::lock_guard<std::mutex> lock(m_connMutex);
-        return m_connId != 0 && m_server->Fetch(m_connId, data, static_cast<int>(length)) == FR_OK;
+        CONNID connId = 0;
+        {
+            std::lock_guard<std::mutex> lock(m_connMutex);
+            connId = m_connId;
+        }
+        
+        return connId != 0 && m_server->Fetch(connId, data, static_cast<int>(length)) == FR_OK;
     }
 
     bool HPSocketTransport::IsConnected() const
@@ -207,21 +224,20 @@ namespace TinySECSGem
         {
             std::lock_guard<std::mutex> lock(m_connMutex);
             m_connId = connId;
+            m_connected = true;
         }
-        m_connected = true;
         m_listener.OnTransportConnected();
     }
 
     void HPSocketTransport::HandleDisconnected(CONNID connId, EnSocketOperation operation, int errorCode)
     {
-        (void)connId;
-        m_connected = false;
         if (m_parameter.m_mode == EnumHSMSMode::EnumHSMSMode_Active)
         {
             m_started = false;
         }
         {
             std::lock_guard<std::mutex> lock(m_connMutex);
+            m_connected = false;
             m_connId = 0;
         }
 

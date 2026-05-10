@@ -235,6 +235,8 @@ void TopItem::clear()
 
 void TopItem::push_back(BaseItem* val)
 {
+    if (val == nullptr)
+        return;
     m_data.push_back(val);
 }
 
